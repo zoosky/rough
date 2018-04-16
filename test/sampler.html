@@ -8,42 +8,33 @@
     <meta name="description" content="Single Page App for CMS AEM using Vue.js">
     <meta name="author" content="Andreas Kapp">
     <title>GOV News</title>
-    <!--
-    <link href="static/application.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="static/css/jquery.contextMenu.css" media="all" rel="stylesheet" type="text/css"/>
-    -->
-    <!-- Script for polyfilling Promises on IE9 and 10 -->
-    <script src='https://cdn.polyfill.io/v2/polyfill.min.js'></script>
-
+   
   <title>RoughJS Map example with D3.js</title>
-  <!--
-  <script src="https://cdn.jsdelivr.net/gh/pshihn/workly/dist/workly.js"></script>
-  -->
-  <script src="/lib/traceur-compiler/traceur.js"></script>
-  <script src="/lib/traceur-compiler/BrowserSystem.js"></script>
-  <script src="lib/traceur-compiler/bootstrap.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script src="/lib/d3.min.js"  type="module"></script>
-  <script src="/lib/topojson/topojson.min.jss" type="module"></script>
-  <script src="dist/rough.es5.js"  type="module"></script>
+
+
+
+<script src="/lib/d3/d3.min.js"></script>
+<script src="/lib/topojson/topojson.min.js"></script>
+<script src="/dist/ak-rough.umd.js"></script>
 </head>
 
 
 <body>
         <div id="output"></div>
         <!-- Load Babel -->
-        
+        <script src="/lib/babel/polyfill.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
         <!-- Your custom script here -->
         <script type="text/babel">
-        const getMessage = () => "Hello World";
+        const getMessage = () => "Hello World from Babel";
         document.getElementById('output').innerHTML = getMessage();
         </script>
 
     <h2>RoughJS Basic Showcase</h2>
     <canvas id="canvas" width="800" height="600"></canvas>
   
-    <script  type="module">
-      var rc = rough.canvas(document.getElementById('canvas'));
+    <script >
+      const rc = rough.canvas(document.getElementById('canvas'));
   
       //line and rectangle
       rc.rectangle(10, 10, 100, 100);
